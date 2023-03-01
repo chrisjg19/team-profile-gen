@@ -5,7 +5,7 @@ test ('Testing school input', () => {
 
     expect(intern.school) .toEqual(expect.any(String));
 });
-
+//had accidentally put the () in the school input instead of the test below
 test ('Testing school input working with getSchool()', () => {
     const intern = new Intern ('chris', 19, 'chris@test.com', 'Rice');
 
