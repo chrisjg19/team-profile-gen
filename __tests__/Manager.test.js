@@ -1,7 +1,13 @@
-const Manager = require('../lib/Employee');
+const Manager = require('../lib/Manager');
 
-test ('Testing name input', () => {
-    const employee = new Employee ('chris', 19, 'chris@test.com');
+test ('Testing officeNumber input', () => {
+    const manager = new Manager ('chris', 19, 'chris@test.com', 10);
 
-    expect(employee.getName()) .toEqual(expect.any(String));
+    expect(manager.officeNumber) .toEqual(expect.any(Number));
+});
+
+test ('Gets role input', () => {
+    const manager = new Manager ('chris', 19, 'chris@test.com');
+
+    expect(manager.getRole()) .toEqual("Manager");
 });
