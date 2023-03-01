@@ -1,25 +1,19 @@
-const Employee = require('../lib/Employee');
+const Engineer = require('../lib/Engineer');
 
-test ('Testing name input', () => {
-    const employee = new Employee ('chris', 19, 'chris@test.com');
+test ('Testing github name input', () => {
+    const engineer = new Engineer ('chris', 19, 'chris@test.com', 'chrisjg19');
 
-    expect(employee.getName()) .toEqual(expect.any(String));
+    expect(engineer.github) .toEqual(expect.any(String));
 });
 
-test ('Testing Id input', () => {
-    const employee = new Employee ('chris', 19, 'chris@test.com');
+test ('Testing if connects to Github', () => {
+    const engineer = new Engineer ('chris', 19, 'chris@test.com', 'chrisjg19');
 
-    expect(employee.getId()) .toEqual(expect.any(Number));
+    expect(engineer.getGithub()) .toEqual(expect.stringContaining(engineer.github.toString()));
 });
 
-test ('Testing email input', () => {
-    const employee = new Employee ('chris', 19, 'chris@test.com');
+test ('Testing role input', () => {
+    const engineer = new Engineer ('chris', 19, 'chris@test.com', 'chrisjg19');
 
-    expect(employee.getEmail()) .toEqual(expect.any(String));
-});
-
-test ('Testing Role input', () => {
-    const employee = new Employee ('chris', 19, 'chris@test.com');
-
-    expect(employee.getRole()) .toEqual('Employee');
+    expect(engineer.getRole()) .toEqual('Engineer');
 });
