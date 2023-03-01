@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/chrisjg19/team-profile-gen/issues"
   },
-  "homepage": "https://github.com/chrisjg19/team-profile-gen#readme"
+  "homepage": "https://github.com/chrisjg19/team-profile-gen#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  }
 }
