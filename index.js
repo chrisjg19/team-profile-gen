@@ -35,7 +35,7 @@ function init() {
 
 }
 
-console.log(init())
+
 
 //here will go the data to generate the employee cards
 
