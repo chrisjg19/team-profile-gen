@@ -30,17 +30,37 @@ function init() {
         name: 'officeNumber',
         message: 'What is your office number?',
     },
-    {
-        type: "list",
-        name: "addEmployee",
-        message: "Would you like to add another employee?",
-        choices: ["Engineer", "Intern", "None"],
-      },
     ]).then(answers => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         employees.push(manager);
+        addEmployee();
       });
+    };
+
+    function addEmployee() {
+        inquirer.prompt([
+            {
+                type: "list",
+                name: "addEmployee",
+                message: "Would you like to add another employee?",
+                choices: ["Engineer", "Intern", "None"],
+              },
+        ]).then((answers) => {
+            switch (answers.addEmployee) {
+                case "Engineer":
+                    addEngineer();
+                    break;
+                case "Intern":
+                    addIntern();
+                    break;
+                default:
+                    generateTeam();
+            }
+        })
+
     }
+
+
     
     function addEngineer() {
       inquirer.prompt([
@@ -73,6 +93,7 @@ function init() {
       ]).then(answers => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         employees.push(engineer);
+        addEmployee();
       });
     }
     
@@ -113,12 +134,14 @@ function init() {
           answers.school
         );
         employees.push(intern);
+        addEmployee();
       });
   }
 
 //here will go the data to generate the employee cards
 
+// function generateTeam(){
 
-
+// }
 
 init();
