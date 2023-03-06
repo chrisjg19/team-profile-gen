@@ -94,4 +94,4 @@ function internCard(intern) {
 
 
 
-module.exports = teamCardHTML;
+module.exports = teamCardHtml;
