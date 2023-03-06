@@ -10,26 +10,26 @@ const Intern = require('./lib/Intern');
 
 
 //here will go the questions. probably will need to create 4. one for initial question and 3 for each type of employee
-init() => {
+function init() {
     inquirer.prompt([{
         type: 'input',
         name: 'name',
-        message: 'Manager name?'
+        message: 'Manager name?',
     },
     {
         type: 'number',
         name: 'id',
-        message: 'What is your ID number?'
+        message: 'What is your ID number?',
     },
     {
         type: 'input',
         name: 'email',
-        message: 'What is your email?'
+        message: 'What is your email?',
     },
     {
         type: 'number',
-        name: 'officeNumber'
-        message: 'What is your office number?'
+        name: 'officeNumber',
+        message: 'What is your office number?',
     }
 ])
 
