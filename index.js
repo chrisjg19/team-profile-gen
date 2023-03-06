@@ -84,12 +84,6 @@ function init() {
           name: 'github',
           message: 'What is your GitHub username?',
         },
-        {
-          type: 'list',
-          name: 'addEmployee',
-          message: 'Would you like to add another employee?',
-          choices: ['Engineer', 'Intern', 'None'],
-        },
       ]).then(answers => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         employees.push(engineer);
@@ -119,12 +113,7 @@ function init() {
           name: 'school',
           message: 'What is the name of your school?',
         },
-        {
-          type: 'list',
-          name: 'addEmployee',
-          message: 'Would you like to add another employee?',
-          choices: ["Engineer", "Intern", "None"],
-        },
+      
       ])
       .then((answers) => {
         const intern = new Intern(
@@ -138,7 +127,7 @@ function init() {
       });
   }
 
-//here will go the data to generate the employee cards
+//here will go the data to generate the employee cards?
 
 // function generateTeam(){
 
