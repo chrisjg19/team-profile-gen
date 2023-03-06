@@ -1,4 +1,4 @@
-function mainHtml() {
+const teamCardHtml = function mainHtml(employees) {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -45,52 +45,52 @@ function mainHtml() {
 </html>`;
 }
 
-function managerCard(manager) {
-  return ` <div class="card" id="manager-card">
+// function managerCard(manager) {
+//   return ` <div class="card" id="manager-card">
   
-  <div class="card-body">
-  <div class="card-header">Manager</div>
-  <h4 class="card-title">${manager.name}</h4>
-  <ul class="list-group list-group-flush">
-      <li class="list-group-item">Employee ID: ${manager.id}</li>
-      <li class="list-group-item"><a href="mailto:${manager.mail}">Email: ${manager.mail}</a></li>
-      <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
-    </ul>
-  </div>
-</div>`;
-}
+//   <div class="card-body">
+//   <div class="card-header">Manager</div>
+//   <h4 class="card-title">${manager.name}</h4>
+//   <ul class="list-group list-group-flush">
+//       <li class="list-group-item">Employee ID: ${manager.id}</li>
+//       <li class="list-group-item"><a href="mailto:${manager.mail}">Email: ${manager.mail}</a></li>
+//       <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
+//     </ul>
+//   </div>
+// </div>`;
+// }
 
 
-function engineerCard(engineer) {
-  return ` <div class="card" id="engineer-card">
+// function engineerCard(engineer) {
+//   return ` <div class="card" id="engineer-card">
   
-  <div class="card-body">
-  <div class="card-header">Engineer</div>
-  <h4 class="card-title">${engineer.name}</h4>
-  <ul class="list-group list-group-flush">
-      <li class="list-group-item">Employee ID: ${engineer.id}</li>
-      <li class="list-group-item"><a href="mailto:${engineer.email}">Email: ${engineer.id}</a></li>
-      <li class="list-group-item"><a href="https://github.com/${engineer.github}"> ${engineer.github}</a></li>
-    </ul>
-  </div>
-</div>`;
-}
+//   <div class="card-body">
+//   <div class="card-header">Engineer</div>
+//   <h4 class="card-title">${engineer.name}</h4>
+//   <ul class="list-group list-group-flush">
+//       <li class="list-group-item">Employee ID: ${engineer.id}</li>
+//       <li class="list-group-item"><a href="mailto:${engineer.email}">Email: ${engineer.id}</a></li>
+//       <li class="list-group-item"><a href="https://github.com/${engineer.github}"> ${engineer.github}</a></li>
+//     </ul>
+//   </div>
+// </div>`;
+// }
 
 
-function internCard(intern) {
-  return ` <div class="card" id="intern-card">
+// function internCard(intern) {
+//   return ` <div class="card" id="intern-card">
   
-  <div class="card-body">
-  <div class="card-header">Intern</div>
-  <h4 class="card-title">${intern.name}</h4>
-  <ul class="list-group list-group-flush">
-      <li class="list-group-item">Employee ID: ${intern.id}</li>
-      <li class="list-group-item"><a href="mailto:${intern.email}">Email: ${intern.email}</a></li>
-      <li class="list-group-item">School: ${intern.school}</li>
-    </ul>
-  </div>
-</div>`;
-}
+//   <div class="card-body">
+//   <div class="card-header">Intern</div>
+//   <h4 class="card-title">${intern.name}</h4>
+//   <ul class="list-group list-group-flush">
+//       <li class="list-group-item">Employee ID: ${intern.id}</li>
+//       <li class="list-group-item"><a href="mailto:${intern.email}">Email: ${intern.email}</a></li>
+//       <li class="list-group-item">School: ${intern.school}</li>
+//     </ul>
+//   </div>
+// </div>`;
+// }
 
 
 

@@ -6,6 +6,7 @@ const fs = require("fs");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 const Intern = require('./lib/Intern');
+const teamCardHtml = require('./src/teamCardHtml');
 const employees = [];
 
 //here will go the questions. probably will need to create 4. one for initial question and 3 for each type of employee
@@ -132,5 +133,72 @@ function init() {
 // function generateTeam(){
 
 // }
+
+function generateTeam() {
+    const cards = employees.map(employee => {
+      switch (employee.getRole()) {
+        case "Manager":
+          return `
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3>${employee.name}</h3>
+                  <h4>Manager</h4>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">ID: ${employee.id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                    <li class="list-group-item">Office Number: ${employee.officeNumber}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          `;
+        case "Engineer":
+          return `
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3>${employee.name}</h3>
+                  <h4>Engineer</h4>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">ID: ${employee.id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                    <li class="list-group-item">GitHub: <a href="https://github.com/${employee.github}" target="_blank" rel="noopener">${employee.github}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          `;
+        case "Intern":
+          return `
+            <div class="col-md-4 col-sm-6">
+              <div class="card">
+                <div class="card-header">
+                  <h3>${employee.name}</h3>
+                  <h4>Intern</h4>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">ID: ${employee.id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+                    <li class="list-group-item">School: ${employee.school}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          `;
+      }
+    });
+    
+    const html = teamCardHtml(cards.join('\n'));
+
+fs.writeFileSync('./dist/index.html', html, 'utf-8');
+console.log('Employee Cards Generated!')
+
+}
 
 init();
